@@ -23,7 +23,7 @@ module.exports = class QueueCommand extends Command {
       titleArray.push(obj.title);
     });
     var queueEmbed = new MessageEmbed()
-      .setColor('#ff7373')
+      .setColor('#76D7C4')
       .setTitle('Music Queue');
     for (let i = 0; i < titleArray.length; i++) {
       queueEmbed.addField(`${i + 1}:`, `${titleArray[i]}`);
