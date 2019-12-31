@@ -36,7 +36,6 @@ client.registry
     ['guild', 'guild related commands']
   ])
   .registerDefaultGroups()
-  .registerDefaultCommands()
   .registerCommandsIn(path.join(__dirname, 'commands'));
 
 
