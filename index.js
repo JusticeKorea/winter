@@ -41,7 +41,7 @@ client.registry
 
 client.once('ready', () => {
   console.log('Ready!');
-  client.user.setActivity('!help for commands', 'WATCHING');
+  client.user.setActivity(".play ➜ 🎵 ", { type: "WATCHING" });
 });
 
 client.login(process.env.TOKEN);
