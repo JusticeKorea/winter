@@ -38,7 +38,7 @@ module.exports = class MusicTriviaCommand extends Command {
     const randomXVideoLinks = this.getRandom(videoDataArray, numOfLinks); // get x random urls
     // create and send info embed
     const infoEmbed = new MessageEmbed()
-      .setColor('#ff7373')
+      .setColor('#76D7C4')
       .setTitle('Starting Music Quiz')
       .setDescription(
         `Get ready! There are ${numOfLinks} songs, you have 30 seconds to guess either the singer/band or the name of the song. Good luck!`
