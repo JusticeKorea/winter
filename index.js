@@ -44,4 +44,4 @@ client.once('ready', () => {
   client.user.setActivity('!help for commands', 'WATCHING');
 });
 
-client.login(token);
+client.login(process.env.TOKEN);
