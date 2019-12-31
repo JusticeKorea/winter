@@ -148,7 +148,7 @@ module.exports = class PlayCommand extends Command {
       }
       vidNameArr.push('exit');
       const embed = new MessageEmbed()
-        .setColor('#e9f931')
+        .setColor('#76D7C4')
         .setTitle('Choose a song by commenting a number between 1 and 5')
         .addField('Song 1', vidNameArr[0])
         .addField('Song 2', vidNameArr[1])
