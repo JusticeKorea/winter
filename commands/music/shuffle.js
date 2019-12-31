@@ -32,7 +32,7 @@ module.exports = class ShuffleQueueCommand extends Command {
       titleArray.push(obj.title);
     });
     var queueEmbed = new MessageEmbed()
-      .setColor('#ff7373')
+      .setColor('#76D7C4')
       .setTitle('New Music Queue');
     for (let i = 0; i < titleArray.length; i++) {
       queueEmbed.addField(`${i + 1}:`, `${titleArray[i]}`);
