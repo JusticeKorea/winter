@@ -257,7 +257,7 @@ module.exports = class PlayCommand extends Command {
             message.guild.musicData.songDispatcher = dispatcher;
             const videoEmbed = new MessageEmbed()
               .setThumbnail(queue[0].thumbnail)
-              .setColor('#e9f931')
+              .setColor('#76D7C4')
               .addField('Now Playing:', queue[0].title)
               .addField('Duration:', queue[0].duration);
             if (queue[1]) videoEmbed.addField('Next Song:', queue[1].title);
