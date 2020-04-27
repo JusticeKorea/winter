@@ -293,6 +293,8 @@ module.exports = class PlayCommand extends Command {
       .catch(e => {
         console.error(e);
         return message.guild.me.voice.channel.leave();
+        return message.react('✅');
+        return message.react('❌');
       });
   }
 
