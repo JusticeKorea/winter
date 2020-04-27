@@ -231,8 +231,6 @@ module.exports = class PlayCommand extends Command {
           songEmbed.delete();
         }
         return message.say(`${song.title} added to queue`);
-        return message.react('✅');
-        return message.react('❌');
       }
     } catch (err) {
       console.error(err);
@@ -266,6 +264,8 @@ module.exports = class PlayCommand extends Command {
             message.say(videoEmbed);
             message.guild.musicData.nowPlaying = queue[0];
             return queue.shift();
+            return message.react('✅');
+            return message.react('❌');
           })
           .on('finish', () => {
             if (queue.length >= 1) {
