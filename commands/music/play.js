@@ -256,8 +256,6 @@ module.exports = class PlayCommand extends Command {
           .on('start', () => {
             message.guild.musicData.songDispatcher = dispatcher;
             const videoEmbed = new MessageEmbed()
-            return message.react('✅');
-            return message.react('❌');
               .setThumbnail(queue[0].thumbnail)
               .setColor('#76D7C4')
               .addField('Now Playing:', queue[0].title)
@@ -265,8 +263,6 @@ module.exports = class PlayCommand extends Command {
             if (queue[1]) videoEmbed.addField('Next Song:', queue[1].title);
             message.say(videoEmbed);
             message.guild.musicData.nowPlaying = queue[0];
-            return message.react('✅');
-            return message.react('❌');
             return queue.shift();
 
           })
