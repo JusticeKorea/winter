@@ -231,8 +231,8 @@ module.exports = class PlayCommand extends Command {
           songEmbed.delete();
         }
         return message.say(`${song.title} added to queue`);
-        message.react('✅');
-        message.react('❌');
+        return message.react('✅');
+        return message.react('❌');
       }
     } catch (err) {
       console.error(err);
