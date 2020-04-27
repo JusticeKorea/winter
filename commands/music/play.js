@@ -271,6 +271,8 @@ module.exports = class PlayCommand extends Command {
           .on('finish', () => {
             if (queue.length >= 1) {
               return this.playSong(queue, message);
+              return message.react('✅');
+              return message.react('❌');
             } else {
               message.guild.musicData.isPlaying = false;
               message.guild.musicData.nowPlaying = null;
@@ -309,5 +311,7 @@ module.exports = class PlayCommand extends Command {
         : '00'
     }`;
     return duration;
+    return message.react('✅');
+    return message.react('❌');
   }
 };
