@@ -231,8 +231,6 @@ module.exports = class PlayCommand extends Command {
           songEmbed.delete();
         }
         return message.say(`${song.title} added to queue`);
-        return message.react('✅');
-        return message.react('❌');
       }
     } catch (err) {
       console.error(err);
@@ -262,27 +260,21 @@ module.exports = class PlayCommand extends Command {
               .setColor('#76D7C4')
               .addField('Now Playing:', queue[0].title)
               .addField('Duration:', queue[0].duration);
-            return message.react('✅');
-            return message.react('❌');
             if (queue[1]) videoEmbed.addField('Next Song:', queue[1].title);
             message.say(videoEmbed);
-            message.guild.musicData.nowPlaying = queue[0];
             return message.react('✅');
             return message.react('❌');
+            message.guild.musicData.nowPlaying = queue[0];
             return queue.shift();
 
           })
           .on('finish', () => {
             if (queue.length >= 1) {
               return this.playSong(queue, message);
-              return message.react('✅');
-              return message.react('❌');
             } else {
               message.guild.musicData.isPlaying = false;
               message.guild.musicData.nowPlaying = null;
               return message.guild.me.voice.channel.leave();
-              return message.react('✅');
-              return message.react('❌');
             }
           })
           .on('error', e => {
@@ -292,15 +284,11 @@ module.exports = class PlayCommand extends Command {
             message.guild.musicData.isPlaying = false;
             message.guild.musicData.nowPlaying = null;
             return message.guild.me.voice.channel.leave();
-            return message.react('✅');
-            return message.react('❌');
           });
       })
       .catch(e => {
         console.error(e);
         return message.guild.me.voice.channel.leave();
-        return message.react('✅');
-        return message.react('❌');
       });
   }
 
@@ -315,7 +303,5 @@ module.exports = class PlayCommand extends Command {
         : '00'
     }`;
     return duration;
-    return message.react('✅');
-    return message.react('❌');
   }
 };
