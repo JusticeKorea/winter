@@ -263,9 +263,10 @@ module.exports = class PlayCommand extends Command {
             if (queue[1]) videoEmbed.addField('Next Song:', queue[1].title);
             message.say(videoEmbed);
             message.guild.musicData.nowPlaying = queue[0];
-            return queue.shift();
             return message.react('✅');
             return message.react('❌');
+            return queue.shift();
+
           })
           .on('finish', () => {
             if (queue.length >= 1) {
@@ -274,6 +275,8 @@ module.exports = class PlayCommand extends Command {
               message.guild.musicData.isPlaying = false;
               message.guild.musicData.nowPlaying = null;
               return message.guild.me.voice.channel.leave();
+              return message.react('✅');
+              return message.react('❌');
             }
           })
           .on('error', e => {
@@ -283,6 +286,8 @@ module.exports = class PlayCommand extends Command {
             message.guild.musicData.isPlaying = false;
             message.guild.musicData.nowPlaying = null;
             return message.guild.me.voice.channel.leave();
+            return message.react('✅');
+            return message.react('❌');
           });
       })
       .catch(e => {
